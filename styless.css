@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+header h1 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Grid dos Caminhos */
+.grid-caminhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #e8f5e9;
+  padding: 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.2);
+  border-color: #4caf50;
+}
+
+.card .icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: #1b5e20;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Questionário */
+.escondido {
+  display: none;
+}
+
+#pergunta-box {
+  margin-top: 20px;
+}
+
+#texto-pergunta {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+.botoes-opcao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-opcao {
+  padding: 12px 20px;
+  border: 1px solid #a5d6a7;
+  background: #f1f8e9;
+  color: #2e7d32;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn-opcao:hover {
+  background: #c8e6c9;
+}
+
+/* Botões Auxiliares */
+.btn-voltar, .btn-reiniciar {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+.btn-reiniciar {
+  background: #2e7d32;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.btn-reiniciar:hover {
+  background: #1b5e20;
+}

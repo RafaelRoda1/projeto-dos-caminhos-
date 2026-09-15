@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoReflexão 🌱</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Reflexão Ambiental</title>
+  <link rel="stylesheet" href="styless.css">
 </head>
 <body>
 
@@ -14,30 +14,28 @@
       <p>Escolha um caminho para refletir sobre seus hábitos e o futuro do nosso planeta.</p>
     </header>
 
-    <!-- Tela Inicial: Seleção de Caminhos -->
     <div id="caminhos-container" class="grid-caminhos">
-      <div class="card" id="card-consumo">
+      <div class="card" onclick="iniciarCaminho('consumo')">
         <span class="icon">🛍️</span>
         <h2>Consumo Consciente</h2>
         <p>Reflita sobre o que você compra, usa e descarta no dia a dia.</p>
       </div>
 
-      <div class="card" id="card-energia">
+      <div class="card" onclick="iniciarCaminho('energia')">
         <span class="icon">⚡</span>
         <h2>Energia e Mobilidade</h2>
         <p>Pense sobre como você se locomove e consome energia.</p>
       </div>
 
-      <div class="card" id="card-natureza">
+      <div class="card" onclick="iniciarCaminho('natureza')">
         <span class="icon">🌳</span>
         <h2>Conexão com a Natureza</h2>
         <p>Avalie sua relação direta com o meio ambiente e a biodiversidade.</p>
       </div>
     </div>
 
-    <!-- Tela do Quiz -->
     <div id="quiz-container" class="escondido">
-      <button id="btn-voltar" class="btn-voltar">← Escolher outro caminho</button>
+      <button class="btn-voltar" onclick="voltarInicio()">← Escolher outro caminho</button>
       <div id="pergunta-box">
         <h2 id="titulo-caminho"></h2>
         <p id="texto-pergunta"></p>
@@ -45,14 +43,13 @@
       </div>
     </div>
 
-    <!-- Tela do Resultado Final -->
     <div id="resultado-container" class="escondido">
       <h2>Obrigado por refletir! 🌍</h2>
       <p id="mensagem-final"></p>
-      <button id="btn-reiniciar" class="btn-reiniciar">Recomeçar Reflexão</button>
+      <button class="btn-reiniciar" onclick="voltarInicio()">Recomeçar Reflexão</button>
     </div>
   </div>
 
-  <script type="module" src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

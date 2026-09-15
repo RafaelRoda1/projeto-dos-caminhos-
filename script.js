@@ -1,4 +1,4 @@
-// Lista de nomes para o sorteio
+// Lista de nomes para o sorteio do personagem
 const nomes = ["Gabriel", "Sophia", "Lucas", "Isabela", "Mateus", "Beatriz"];
 let nomeSorteado = "";
 
@@ -164,15 +164,16 @@ let pontuacaoTotal = 0;
 function iniciarCaminho(caminho) {
   caminhoAtual = caminho;
   indicePergunta = 0;
-  pontuacaoTotal = 0; // Reseta os pontos ao começar
+  pontuacaoTotal = 0;
 
-  // Sortear nome com Math.random e Math.floor
+  // Sortear nome usando Math.random() e Math.floor()
   const indiceNome = Math.floor(Math.random() * nomes.length);
   nomeSorteado = nomes[indiceNome];
-  
+
   document.getElementById("caminhos-container").classList.add("escondido");
+  document.getElementById("stats-container").classList.add("escondido");
   document.getElementById("quiz-container").classList.remove("escondido");
-  
+
   carregarPergunta();
 }
 
@@ -181,12 +182,12 @@ function carregarPergunta() {
   const listaPerguntas = perguntasPorCaminho[caminhoAtual];
   const dadosPergunta = listaPerguntas[indicePergunta];
 
+  document.getElementById("contador-progresso").innerText = `Pergunta ${indicePergunta + 1} de ${listaPerguntas.length}`;
   document.getElementById("titulo-caminho").innerText = caminhoAtual.toUpperCase();
-  
-  // Troca a palavra "você" pelo nome sorteado usando .replace()
+
+  // Substituição usando .replace() para colocar o nome sorteado
   let textoPersonalizado = dadosPergunta.pergunta.replace(/você/g, nomeSorteado).replace(/Você/g, nomeSorteado);
-  
-  document.getElementById("texto-pergunta").innerText = `${indicePergunta + 1}. Em 2049, ${textoPersonalizado}`;
+  document.getElementById("texto-pergunta").innerText = `Em 2049, ${textoPersonalizado}`;
 
   const containerOpcoes = document.getElementById("opcoes-container");
   containerOpcoes.innerHTML = "";
@@ -204,7 +205,7 @@ function carregarPergunta() {
 function proximaPergunta(pontos) {
   pontuacaoTotal += pontos;
   indicePergunta++;
-  
+
   const listaPerguntas = perguntasPorCaminho[caminhoAtual];
 
   if (indicePergunta < listaPerguntas.length) {
@@ -214,7 +215,7 @@ function proximaPergunta(pontos) {
   }
 }
 
-// Exibe a tela final calculando se o nível é Ruim, Médio ou Bom
+// Exibe o resultado final com base na pontuação acumulada
 function mostrarResultado() {
   document.getElementById("quiz-container").classList.add("escondido");
   document.getElementById("resultado-container").classList.remove("escondido");
@@ -224,7 +225,6 @@ function mostrarResultado() {
   let nivel = "";
   let conselho = "";
 
-  // Avaliação baseada na pontuação total acumulada
   if (pontuacaoTotal <= 4) {
     nivel = "🔴 Nível: Precisa Melhorar";
     conselho = `Os hábitos de ${nomeSorteado} geram um impacto considerável no planeta. Pequenos passos diários já fazem uma enorme diferença. Que tal começar uma mudança hoje?`;
@@ -239,9 +239,10 @@ function mostrarResultado() {
   mensagem.innerHTML = `<strong>${nivel}</strong><br><br>${conselho}`;
 }
 
-// Volta para a tela principal
+// Volta para a tela inicial
 function voltarInicio() {
   document.getElementById("quiz-container").classList.add("escondido");
   document.getElementById("resultado-container").classList.add("escondido");
   document.getElementById("caminhos-container").classList.remove("escondido");
+  document.getElementById("stats-container").classList.remove("escondido");
 }

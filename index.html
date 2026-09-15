@@ -3,39 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reflexão Ambiental</title>
+  <title>EcoReflexão 🌱</title>
   <link rel="stylesheet" href="styless.css">
 </head>
 <body>
 
   <div class="container">
+    <!-- Cabeçalho Principal -->
     <header>
+      <span class="badge-topo">Sustentabilidade em Ação</span>
       <h1>EcoReflexão 🌱</h1>
       <p>Escolha um caminho para refletir sobre seus hábitos e o futuro do nosso planeta.</p>
     </header>
 
+    <!-- Tela Inicial: Seleção de Caminhos -->
     <div id="caminhos-container" class="grid-caminhos">
       <div class="card" onclick="iniciarCaminho('consumo')">
-        <span class="icon">🛍️</span>
+        <div class="icon-wrapper">🛍️</div>
         <h2>Consumo Consciente</h2>
         <p>Reflita sobre o que você compra, usa e descarta no dia a dia.</p>
+        <span class="card-action">Iniciar Reflexão →</span>
       </div>
 
       <div class="card" onclick="iniciarCaminho('energia')">
-        <span class="icon">⚡</span>
+        <div class="icon-wrapper">⚡</div>
         <h2>Energia e Mobilidade</h2>
         <p>Pense sobre como você se locomove e consome energia.</p>
+        <span class="card-action">Iniciar Reflexão →</span>
       </div>
 
       <div class="card" onclick="iniciarCaminho('natureza')">
-        <span class="icon">🌳</span>
+        <div class="icon-wrapper">🌳</div>
         <h2>Conexão com a Natureza</h2>
         <p>Avalie sua relação direta com o meio ambiente e a biodiversidade.</p>
+        <span class="card-action">Iniciar Reflexão →</span>
       </div>
     </div>
 
+    <!-- Indicadores de Destaque na Tela Inicial -->
+    <div id="stats-container" class="grid-stats">
+      <div class="stat-item">
+        <strong>3</strong>
+        <span>Trilhas Únicas</span>
+      </div>
+      <div class="stat-item">
+        <strong>18</strong>
+        <span>Questões de Impacto</span>
+      </div>
+      <div class="stat-item">
+        <strong>2049</strong>
+        <span>Visão de Futuro</span>
+      </div>
+    </div>
+
+    <!-- Tela do Quiz -->
     <div id="quiz-container" class="escondido">
-      <button class="btn-voltar" onclick="voltarInicio()">← Escolher outro caminho</button>
+      <div class="quiz-header">
+        <button class="btn-voltar" onclick="voltarInicio()">← Mudar Caminho</button>
+        <span id="contador-progresso" class="badge-progresso">Pergunta 1 de 6</span>
+      </div>
+      
       <div id="pergunta-box">
         <h2 id="titulo-caminho"></h2>
         <p id="texto-pergunta"></p>
@@ -43,9 +70,15 @@
       </div>
     </div>
 
+    <!-- Tela do Resultado Final -->
     <div id="resultado-container" class="escondido">
-      <h2>Obrigado por refletir! 🌍</h2>
-      <p id="mensagem-final"></p>
+      <div class="resultado-header">
+        <div class="icon-resultado">🌍</div>
+        <h2>Obrigado por refletir!</h2>
+      </div>
+      <div id="mensagem-box" class="mensagem-box">
+        <p id="mensagem-final"></p>
+      </div>
       <button class="btn-reiniciar" onclick="voltarInicio()">Recomeçar Reflexão</button>
     </div>
   </div>

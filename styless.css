@@ -35,7 +35,6 @@ header p {
   margin-bottom: 30px;
 }
 
-/* Grid dos Caminhos */
 .grid-caminhos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -74,7 +73,6 @@ header p {
   color: #555;
 }
 
-/* Questionário */
 .escondido {
   display: none;
 }
@@ -110,7 +108,6 @@ header p {
   background: #c8e6c9;
 }
 
-/* Botões Auxiliares */
 .btn-voltar, .btn-reiniciar {
   background: none;
   border: none;
